@@ -77,7 +77,7 @@ app = FastAPI(title="Alzheimer's Detection API (Tuned PyTorch)")
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://my-frontend.vercel.app"],
+    allow_origins=["http://localhost:5173","https://ai-doctor-sid.netlify.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
