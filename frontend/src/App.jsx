@@ -73,7 +73,7 @@ export default function App() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://huggingface.co/spaces/siddhant4545/alzheimer-fast-api/predict', {
+      const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
         body: formData,
       });
@@ -101,7 +101,7 @@ export default function App() {
   const handleGetPrecautions = async (currentDiagnosis) => {
     setIsChatLoading(true);
     try {
-      const response = await fetch('https://huggingface.co/spaces/siddhant4545/alzheimer-fast-api/get_precautions', {
+      const response = await fetch('http://localhost:8000/get_precautions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ diagnosis: currentDiagnosis }),
@@ -145,7 +145,7 @@ export default function App() {
     }));
 
     try {
-        const response = await fetch('https://huggingface.co/spaces/siddhant4545/alzheimer-fast-api/chat', {
+        const response = await fetch('http://localhost:8000/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
